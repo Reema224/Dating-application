@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <nav class="navbar">
         <div>
-            <h1>AmourApp</h1>
+            <img src="./images/logo.PNG" alt="logo">
         </div>
         <div>
             <a href="">Home</a>
@@ -26,19 +27,19 @@
        </div>
        <div>
            <label for="username">Username:</label>
-           <input type="text" placeholder="username">
+           <input id="name" type="text" placeholder="username" required>
        </div>
        <div>
            <label for="email">Email:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           <input type="email" placeholder="email">
+           <input id="email" type="email" placeholder="email" required>
        </div>
        <div>
           <label for="password">Password:</label>&nbsp;
-          <input type="password" placeholder="password">
+          <input id="password" type="password" placeholder="password" required>
        </div>
        
        <div class="signup-btn">
-           <button class="all-btn">Signup</button>
+           <button id="btn_signup" class="all-btn">Signup</button>
        </div>
       <div>
         <a href="" id="linkLogin">Already have an account? Login</a>
@@ -59,11 +60,13 @@
             </div>
 
             <div class="login-btn">
-                <button class="all-btn">Login</button>
+                <button id="btn_login" class="all-btn">Login</button>
             </div>
-            <div><a href="" id="linkSignup">Don't have an account? Create account</a></div>
+            <div><a href="" id="linkSignup" onclick="toggle()">Don't have an account? Create account</a></div>
         </div>
 
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.js"></script>
         <script src="./js/index.js"></script>
 </body>
 </html>
