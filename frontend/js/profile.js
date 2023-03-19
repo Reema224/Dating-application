@@ -1,16 +1,59 @@
-function previewImage() {
-	var preview = document.querySelectorAll('img-profile');
-	var file = document.querySelector('input[type=file]').files[0];
-	var reader = new FileReader();
+function previewImage1() {
+  var preview = document.getElementById('preview-img');
+  var file = document.getElementById("file").files[0];
+  var reader = new FileReader();
 
-	reader.addEventListener("load", function () {
-		preview.src = reader.result;
-	}, false);
+  reader.addEventListener("load", function () {
+    preview.src = reader.result;
+  }, false);
 
-    if (file) {
-	reader.readAsDataURL(file);
-    }
+  if (file) {
+    reader.readAsDataURL(file);
+  }
 }
+
+function previewImage2() {
+  var preview = document.getElementById('preview-img1');
+  var file = document.getElementById("file1").files[0];
+  var reader = new FileReader();
+
+  reader.addEventListener("load", function () {
+    preview.src = reader.result;
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+
+function previewImage3() {
+  var preview = document.getElementById('preview-img2');
+  var file = document.getElementById("file2").files[0];
+  var reader = new FileReader();
+
+  reader.addEventListener("load", function () {
+    preview.src = reader.result;
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+
+function previewImage4() {
+  var preview = document.getElementById('preview-img3');
+  var file = document.getElementById("file3").files[0];
+  var reader = new FileReader();
+
+  reader.addEventListener("load", function () {
+    preview.src = reader.result;
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+
 
 function showBio() {
 	var bioTextarea = document.getElementById("bio-textarea");

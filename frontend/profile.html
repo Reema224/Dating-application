@@ -10,8 +10,8 @@
 </head>
 <body>
     <nav class="navbar">
-       <div>
-           <img src="./images/logo.PNG" alt="logo">
+       <div class="logo">
+           <!-- <img src="./images/logo.PNG" alt="logo"> -->
         </div>
         <div>
             <a href="">Home</a>
@@ -24,10 +24,10 @@
     <div class="container">
         <h1>Profile picture</h1>
         <div class="image-wrapper">
-            <img class="img-profile" src="./images/dummy.jpg" alt="Dummy Image">
+            <img id="preview-img" src="./images/dummy.jpg" alt="Dummy Image">
             <label class="browse-button">
             Click to Browse
-            <input type="file" name="file" id="file" onchange="previewImage()">
+            <input type="file" name="file" id="file" onchange="previewImage1()">
             </label>
         </div>
         <h1>Biography</h1>
@@ -50,34 +50,33 @@
                 <option value="female">Female</option>
             </select>
         </div>
-       
-        <div>
-            <button class="all-btn">Save</button>
-        </div><br><br>
 
         <div class="uploads">
             <div class="image-wrapper">
-                <img class="img-profile" src="./images/dummy.jpg" alt="Dummy Image">
+                <img id="preview-img1" src="./images/dummy.jpg" alt="Dummy Image">
                 <label class="browse-button">
                     Upload picture
-                    <input type="file" name="file" id="file" onchange="previewImage()">
+                    <input type="file" name="file" id="file1" onchange="previewImage2()">
                 </label>
             </div>
             <div class="image-wrapper">
-                <img class="img-profile" src="./images/dummy.jpg" alt="Dummy Image">
+                <img  id="preview-img2" src="./images/dummy.jpg" alt="Dummy Image">
                 <label class="browse-button">
                     Upload picture
-                    <input type="file" name="file" id="file" onchange="previewImage()">
+                    <input type="file" name="file" id="file2" onchange="previewImage3()">
                 </label>
             </div>
             <div class="image-wrapper">
-                <img class="img-profile" src="./images/dummy.jpg" alt="Dummy Image">
+                <img  id="preview-img3" src="./images/dummy.jpg" alt="Dummy Image">
                 <label class="browse-button">
                     Upload picture
-                    <input type="file" name="file" id="file" onchange="previewImage()">
+                    <input type="file" name="file" id="file3" onchange="previewImage4()">
                 </label>
             </div>
         </div>
+        <div>
+            <button class="all-btn">Save</button>
+        </div><br><br>
     </div>
         <script src="./js/profile.js"></script>
 </body>

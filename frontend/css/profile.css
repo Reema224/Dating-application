@@ -92,8 +92,11 @@ textarea {
     margin-bottom: 3rem;
     gap: 2rem;
 }
-
+.all-btn{
+    margin-top: 1rem;
+}
 .all-btn:hover {
+    
     background-color: rgb(117, 206, 196);
 }
 input[type="text"],
@@ -107,4 +110,10 @@ select {
     justify-content: center;
     align-items: center;
     gap: 3rem;
+}
+.logo{
+    padding: 2rem;
+    width: 5.8rem;
+    height: 0.2rem;
+    background-image: url("../images/logo.PNG");
 }
