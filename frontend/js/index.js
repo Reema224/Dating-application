@@ -56,7 +56,7 @@ function signup() {
     }
   })
   .catch((err) => {
-    console.error(err);
+    console.log(err);
   });
          
 };
@@ -66,32 +66,21 @@ function signin() {
 
     let email = document.getElementById('email_signin').value;
     let password = document.getElementById('password_signin').value;
-    let type = document.getElementById('type_signup').value;
-    console.log(isValidEmail(email));
+    
     let data = new FormData();
     data.append('email', email);
     data.append('password', password);
-    axios.post('http://localhost/Hospital-project/Backend/login.php', data).then(function (result) {
+    axios.post(pages.base_url+'/login', data).then(function (result) {
         console.log(result.data)
-        let get_type= result.data.type
-        console.log(get_type)
 
-    if (result.data.response== "logged in") {
+    if (result.data.status== "success") {
       alert("logged up successfully!");
-    if(get_type==1){
-        window.location.href = "./html/admin.html";
-        
-    }else if(get_type==2){
-         window.location.href = "./html/employee.html";
-    } else if(get_type==3){
-         window.location.href = "./html/patient.html";
-    }
     } else {
       alert("Make sure login information is correct");
     }
   })
   .catch((err) => {
-    console.error(err);
+    console.log(err);
   });
 
 }

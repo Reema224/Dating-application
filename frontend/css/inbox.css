@@ -1,7 +1,8 @@
 body{
     margin: 0;
     padding: 0;
-    background-image: url("../images/inbox.PNG");
+    background-color: lightyellow;
+    overflow-x: hidden;
 
    
 }
@@ -9,7 +10,7 @@ body{
     display: flex;
     background-color: #fff;
     flex-direction: column;
-    margin: 1rem;
+    margin: 2rem;
     border: 1px solid black;
     padding: 10px;
     margin-bottom: 10px;
@@ -21,7 +22,8 @@ body{
     border: 1px solid black;
 }
 .inbox{
-    margin-left: 1rem;
+    margin-left: 2rem;
+    position: relative;
 }
 
 .reply-form {
@@ -46,6 +48,8 @@ body{
 
 .reply-form button[type="submit"] {
     display: flex;
+    width: 5rem;
+    justify-content: center;
     margin-top: 1rem;
     padding: 0.5rem;
     background-color: #007bff;
@@ -58,3 +62,8 @@ body{
 .reply-form button[type="submit"]:hover {
     background-color: #0069d9;
 }
+.reply-form input[type="email"]{
+    width: fit-content;
+}
+
+
