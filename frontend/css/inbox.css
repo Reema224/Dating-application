@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/inbox.PNG");
+
+   
+}
+.container {
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+    margin: 1rem;
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.reply-form {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+.inbox{
+    margin-left: 1rem;
+}
+
+.reply-form {
+    display: none;
+    margin-top: 1rem;
+}
+
+.reply-form label,
+.reply-form textarea {
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.reply-form textarea {
+    width: 50%;
+    height: 6rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ddd;
+    resize: vertical;
+}
+
+.reply-form button[type="submit"] {
+    display: flex;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.reply-form button[type="submit"]:hover {
+    background-color: #0069d9;
+}

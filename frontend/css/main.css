@@ -1,5 +1,11 @@
+:root {
+    --pink-color: #F7BACF;
+    --light-gray: #F2F2F2;
+    --blue-color: #8EDCE6;
+    --light-red: #D24D57;
+}
 .all-btn {
-    width: fit-content;
+    width: 5rem;
     align-content: center;
     text-align: center;
     border-radius: 3%;
