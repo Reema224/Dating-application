@@ -25,12 +25,37 @@ Route::controller(TodoController::class)->group(function () {
 });
 
 
-Route::get('/profiless/{profile}', [ProfileController::class, 'show']);
-Route::post('/profiless', [ProfileController::class, 'store']);
+Route::controller(ProfileController::class)->group(function () {
+    Route::get('/profiless/{profile}','show');
+    Route::post('/profiless', 'store');
+    Route::get('/profiles/filter','getByAgeAndLocation');
+    Route::get('/profiles/opposite-gender/{gender}','oppositeGenderProfiles');
+    Route::post('/profiles/{profile}/favorite', 'favorite');
+    Route::post('/profiles/{profile}/block', 'block');
+});
+
+
+Route::controller(UserController::class)->group(function () {
+   Route::get('/users/filter', 'getByAgeAndLocation');
+   Route::get('/users/search', 'searchByName');
+   Route::get('/users/opposite-gender/{gender}','oppositeGenderProfiles');
+});
 
 
 
-Route::get('/users/filter', [UserController::class, 'getByAgeAndLocation']);
-Route::get('/profiles/filter', [ProfileController::class, 'getByAgeAndLocation']);
 
-Route::get('/users/search', [UserController::class, 'searchByName']);
+
+
+
+
+// Route::get('/profiless/{profile}', [ProfileController::class, 'show']);
+// Route::post('/profiless', [ProfileController::class, 'store']);
+
+
+
+// Route::get('/users/filter', [UserController::class, 'getByAgeAndLocation']);
+// Route::get('/profiles/filter', [ProfileController::class, 'getByAgeAndLocation']);
+
+// Route::get('/users/search', [UserController::class, 'searchByName']);
+
+// Route::get('/profiles/opposite-gender/{gender}', [ProfileController::class, 'oppositeGenderProfiles']);

@@ -37,4 +37,11 @@ public function searchByName(Request $request)
     return response()->json(['users' => $users]);
 }
 
+public function oppositeGenderProfiles($gender)
+{
+    $oppositeGender = $gender === 'male' ? 'female' : 'male';
+    $profiles = Profile::where('gender', $oppositeGender)->get();
+
+    return response()->json(['profiles' => $profiles]);
+}
 }

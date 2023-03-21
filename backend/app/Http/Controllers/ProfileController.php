@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Profile;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Favorite;
+use App\Models\Block;
+
 
 class ProfileController extends Controller
 {
@@ -76,6 +79,60 @@ class ProfileController extends Controller
     return response()->json(['profiles' => $profiles]);
 }
 
+public function oppositeGenderProfiles($gender)
+{
+    $oppositeGender = $gender === 'male' ? 'female' : 'male';
+    $profiles = Profile::where('gender', $oppositeGender)->get();
+
+    return response()->json(['profiles' => $profiles]);
+}
+
+
+public function favorite(Request $request, Profile $profile)
+{
+    $user = Auth::user();
+    if (!$user) {
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Unauthorized'
+        ], 401);
+     }
+
+    $favorite = Favorite::firstOrNew([
+        'favorite_user_id' => $user->id,
+        'favorited_user_id' => $profile->user_id
+    ]);
+
+    $favorite->save();
+
+    return response()->json([
+        'status' => 'success',
+        'message' => 'User favorited successfully'
+    ]);
+}
+
+public function block(Request $request, Profile $profile)
+{
+    $user = Auth::user();
+    if (!$user) {
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Unauthorized'
+        ], 401);
+    }
+
+    $block = Block::firstOrNew([
+        'block_user_id' => $user->id,
+        'blocked_user_id' => $profile->user_id
+    ]);
+
+    $block->save();
+
+    return response()->json([
+        'status' => 'success',
+        'message' => 'User blocked successfully'
+    ]);
+}
 }
 
 
