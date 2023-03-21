@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MessageController;
 
 
 Route::controller(AuthController::class)->group(function () {
@@ -39,23 +40,10 @@ Route::controller(UserController::class)->group(function () {
    Route::get('/users/filter', 'getByAgeAndLocation');
    Route::get('/users/search', 'searchByName');
    Route::get('/users/opposite-gender/{gender}','oppositeGenderProfiles');
+
 });
 
 
-
-
-
-
-
-
-// Route::get('/profiless/{profile}', [ProfileController::class, 'show']);
-// Route::post('/profiless', [ProfileController::class, 'store']);
-
-
-
-// Route::get('/users/filter', [UserController::class, 'getByAgeAndLocation']);
-// Route::get('/profiles/filter', [ProfileController::class, 'getByAgeAndLocation']);
-
-// Route::get('/users/search', [UserController::class, 'searchByName']);
-
-// Route::get('/profiles/opposite-gender/{gender}', [ProfileController::class, 'oppositeGenderProfiles']);
+Route::controller(MessageController::class)->group(function () {
+Route::post('/messages/{to_user}', 'store');
+});
