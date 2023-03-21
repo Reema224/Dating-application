@@ -54,5 +54,29 @@ class ProfileController extends Controller
             'profile' => $profile
         ]);
     }
+
+
+    public function getByAgeAndLocation(Request $request)
+{
+    $age = $request->input('age');
+    $location = $request->input('location');
+
+    $query = Profile::query();
+
+    if ($age) {
+        $query->where('age', $age);
+    }
+
+    if ($location) {
+        $query->where('location', $location);
+    }
+
+    $profiles = $query->get();
+
+    return response()->json(['profiles' => $profiles]);
 }
+
+}
+
+
 
