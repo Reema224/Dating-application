@@ -40,6 +40,10 @@ class AuthController extends Controller
                 ]
             ]);
 
+// Get the token from the API response
+$token = $response->json('token');
+return $response;
+
     }
 
     public function register(Request $request){

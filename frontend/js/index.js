@@ -19,6 +19,10 @@ const pages = {};
 
 pages.base_url = "http://127.0.0.1:8000/api";
 
+const setToken = () => {
+  const token = localStorage.getItem('token');
+  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+}
 pages.getAPI = async (api_url) => {
     try{
         return await axios(api_url);
@@ -50,7 +54,11 @@ function signup() {
     console.log(result);
     if (result.data.status== "success") {
       console.log("Signed up successfully!");
-
+      // save token to local storage
+       localStorage.setItem('token', result.data.authorisation.token);
+       localStorage.setItem("name", result.data.user.name);  
+       localStorage.setItem("user_id", result.data.user.id); 
+            
     } else {
       console.log("unable to sign up");
     }
@@ -74,7 +82,13 @@ function signin() {
         console.log(result.data)
 
     if (result.data.status== "success") {
-      alert("logged up successfully!");
+    alert("logged up successfully!");
+    // Save the token to local storage
+  
+    localStorage.setItem('user_id', result.data.user.id); 
+    localStorage.setItem('name', result.data.user.name); 
+    localStorage.setItem('token',result.data.authorisation.token);
+  
     } else {
       alert("Make sure login information is correct");
     }
