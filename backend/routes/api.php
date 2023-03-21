@@ -25,11 +25,10 @@ Route::controller(TodoController::class)->group(function () {
     Route::delete('todo/{id}', 'destroy');
 });
 
-Route::controller(ForgotPasswordController::class)->group(function () {
-    Route::post('forgot-password', [App\Http\Controllers\ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-});
+
+Route::get('/profiless/{profile}', [ProfileController::class, 'show']);
+Route::post('/profiless', [ProfileController::class, 'store']);
 
 
-Route::post('/profiles', [ProfileController::class, 'store']);
 
 
